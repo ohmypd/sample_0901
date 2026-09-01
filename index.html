@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="오늘 할 일을 정하는 정적 룰렛 UI" />
+    <title>오늘 뭐 하지?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-screen">
+      <header class="page-title">
+        <img class="page-title__spark" src="design/reference/assets/accent-sparks.svg" alt="" />
+        <h1>오늘 뭐 하지?</h1>
+        <img class="page-title__spark page-title__spark--right" src="design/reference/assets/accent-sparks.svg" alt="" />
+      </header>
+
+      <section class="roulette" aria-label="오늘 할 일을 고르는 6칸 룰렛">
+        <img id="roulettePointer" class="roulette__pointer" src="design/reference/assets/pointer.svg" alt="선택 위치" />
+
+        <div id="rouletteWheel" class="roulette__wheel">
+          <span class="roulette__divider roulette__divider--30" aria-hidden="true"></span>
+          <span class="roulette__divider roulette__divider--90" aria-hidden="true"></span>
+          <span class="roulette__divider roulette__divider--150" aria-hidden="true"></span>
+
+          <img class="roulette__icon roulette__icon--brain" src="design/icon image/icon_06_뇌.png" alt="뇌" />
+          <img class="roulette__icon roulette__icon--vr" src="design/icon image/icon_03_VR.png" alt="VR" />
+          <img class="roulette__icon roulette__icon--art" src="design/icon image/icon_05_예술.png" alt="예술" />
+          <img class="roulette__icon roulette__icon--code" src="design/icon image/icon_04_코딩.png" alt="코딩" />
+          <img class="roulette__icon roulette__icon--think" src="design/icon image/icon_01_생각.png" alt="생각" />
+          <img class="roulette__icon roulette__icon--book" src="design/icon image/icon_02_책.png" alt="책" />
+
+          <span class="roulette__center" aria-hidden="true"></span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="룰렛 조작 버튼">
+        <button id="startButton" class="control-button control-button--start" type="button">
+          <img class="control-button__spark" src="design/reference/assets/accent-sparks.svg" alt="" />
+          <span>시작하기</span>
+          <img class="control-button__spark control-button__spark--right" src="design/reference/assets/accent-sparks.svg" alt="" />
+        </button>
+
+        <div class="controls__secondary">
+          <button id="shuffleButton" class="control-button control-button--secondary" type="button">
+            <img class="control-button__icon" src="design/reference/assets/shuffle.svg" alt="" />
+            <span>섞기</span>
+          </button>
+          <button id="resetButton" class="control-button control-button--secondary" type="button">
+            <img class="control-button__icon" src="design/reference/assets/reset.svg" alt="" />
+            <span>초기화</span>
+          </button>
+        </div>
+      </section>
+
+      <p id="statusMessage" class="visually-hidden" aria-live="polite"></p>
+
+      <section id="resultOverlay" class="result-overlay" aria-label="선택 결과" hidden>
+        <div id="celebration" class="celebration" aria-hidden="true"></div>
+        <div class="result-dialog" role="dialog" aria-modal="true" aria-label="오늘의 선택 결과">
+          <img id="resultImage" class="result-dialog__image" src="design/result image/06_뇌.jpg" alt="뇌 활동 결과 삽화" />
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
